@@ -18,14 +18,17 @@ def initDb():
 @app.route('/set/status/')
 def setStatus():
     status = request.args.get("status", "off")
-    db = sqlite3.connect(DATABASE)
+    #db = sqlite3.connect(DATABASE)
     return status
 
 
+@app.route("/")
+def home():
+    return "welcome to remote switch"
 
 @app.route('/get/status/')
 def getStatus():
-    db = sqlite3.connect(DATABASE)
+#db = sqlite3.connect(DATABASE)
     
 
     return "ok" 
